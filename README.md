@@ -19,14 +19,14 @@
 10. Implement GET "http://localhost:4000/voters/thao?address=fairfield&phone=6411234567, which returns the vote's information of this voter.
 ## Today (03/13/2023)
 11. Implement POST "http://localhost:4000/voters" with the body 
-`{"phone": "6411234567", password: "hahaha", "name": "thao", "address": "fairfield"}`
+`{"phone": "6411234567", password: "123", "name": "thao", "address": "fairfield"}`
 * This route will sign up a new user.
 * The username is the phone number. Ensure this phone is unique in this system.
-* Hash the password using bcrypt module
+* Hash the password using bcrypt module, const hashed = bcrypt.hashSync(password, 8);
 * A file 'voters.json' will store all voters.
-11. Implement the signin request POST "http://localhost:4000/voters" with the body 
-`{"name": "thao", "address": "fairfield", "phone": "6411234567"}`
-12. Change the routes in the questions 2, 9, 10, to get the information from the logged in voter.
+12. Implement the signin request POST "http://localhost:4000/voters" with the body 
+`{"phone": "6411234567", "password": "123" }`
+13. Change the routes in the questions 2, 9, 10, to get the information from the logged in voter.
 * POST 'http://localhost:4000/voters' with the body {"president": "Michael", "vice-president": "Christine"}
 * PUT 'http://localhost:4000/voters', which updates the candidates in the body. e.g. {"president": "John", "vice-president": "Christine"}
 * GET 'http://localhost:4000/voters', which returns the vote's information of this voter
